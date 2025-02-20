@@ -1,0 +1,78 @@
+services:
+  database:
+    container_name: orbio_database
+    image: postgres:15
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: orbio
+
+  backend:
+    container_name: orbio_backend
+    image: orbio_backend:latest
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+      target: base'
+    volumes:
+      - ./backend/http:/http
+    environment:
+      - DATABASE_URL=postgresql://admin:admin123@database:5432/orbio
+      - SECRET_KEY=9ea166178a5b5e807f79afe9318a8f6e
+      - JWT_SECRET_KEY=52e836b8e59c662574b20258b5fe144f
+    depends_on:
+      - database
+
+  scheduler:
+    container_name: orbio_scheduler
+    image: orbio_scheduler:latest
+    build:
+      context: ./scheduler
+      dockerfile: ./Dockerfile
+      target: base
+    volumes:
+      - ../SyncedData:/server/app/data
+      - logs:/server/logs
+    environment:
+      - DATABASE_URL=postgresql://admin:admin123@database:5432/orbio
+    depends_on:
+      - database
+
+  frontend:
+    container_name: orbio_frontend
+    image: orbio_frontend:latest
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+      target: base
+    volumes:
+      - ./frontend/http:/http
+    depends_on:
+      - backend
+
+  ngnix:
+    container_name: orbio_nginx
+    image: orbio_nginx:latest
+    build:
+      context: ./nginx/
+      dockerfile: ./Dockerfile
+      target: base
+    volumes:
+      - /etc/ssl/letsencrypt/ecc:/srv/certs
+    ports:
+      - '443:443'
+      - '80:80'
+    depends_on:
+      - frontend
+      - backend
+      
+
+volumes:
+  pgdata:
+    driver: local
+  logs:
+    driver: local
