@@ -9,12 +9,16 @@
 4. Jianing Xu
 
 ## Project Description 
-Our project, titled Orbio, is a web interface that uses the CLAID Middleware to display sensor data from smartwatches, such as heart rate or acceleration. We worked with points of contact from [ADAMMA Lab](https://adamma.ethz.ch/), a research group at ETH Zurich focused on biomarker research. Our project currently implements a "PI View" where PIs can create research studies and view participant data, and a "User View" where users can view their own data and join studies.
+Our project, titled Orbio, is a web interface that uses the CLAID Middleware to display sensor data from smartwatches, such as heart rate or acceleration. We worked with points of contact from [ADAMMA Lab](https://adamma.ethz.ch/), a research group at ETH Zurich focused on biomarker research. Our project currently implements a "Principle Investigator (PI) View" where PIs can create research studies and view participant data and a "User View" where users can view their own data and join studies.
 
 The application is deployed on the ADAMMA servers, here http://claid-dashboard.ethz.ch.
 
+To check it out, you can use our demo users:
+Participant: "Benjamin@orbio.com" with password "test" 
+PI: "Nikita@orbio.com" with password "test"
+
 ### Users
-- Principal Investigators (PIs) that want to conduct a research study involving biometrics data from smartwatches.
+- Principal Investigators (PIs) who want to conduct a research study involving biometrics data from smartwatches.
 - Users that have a smartwatch and want to visualize their watch's data and/or participate in a research study.
 Note that one email can make a separate PI and User account.
 
@@ -105,7 +109,7 @@ To run this project, you need to have the following installed on your machine:
 ### With Docker Compose (recommended)
 To run the project with docker compose, you have to first:
 - clone the repository;
-- open a terminal instance and using the command ```cd``` move to the folder where the project has been downloaded;
+- open a terminal instance and, using the command ```cd``` move to the folder where the project has been downloaded;
 - If you want to see data in the web dashboard, ensure that you provide mock data under "scheduler/app/data/DDB". The data there should be in the same format as CLAID transmitted data from the sensors (each user should have an own folder titled with their user_id, which store seperate folders for each day containing the data in the CLAID transmitted binary format).
 
 Then, you can run the project with docker compose, using the following command:
