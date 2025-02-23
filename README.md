@@ -14,7 +14,9 @@ Our project, titled Orbio, is a web interface that uses the CLAID Middleware to 
 The application is deployed on the ADAMMA servers, here http://claid-dashboard.ethz.ch.
 
 To check it out, you can use our demo users:
+
 Participant: "Benjamin@orbio.com" with password "test" 
+
 PI: "Nikita@orbio.com" with password "test"
 
 ### Users
