@@ -1,0 +1,3 @@
+repo_url=http://adamma.ethz.ch:8000/repository/developing_digital_biomarkers/
+developer_name=ddb_student
+developer_password=gw4PnA6UHR5XhXwPMpPLUv3dLLyMHHbxPwvZMt92z6YRbznHSzehnX3Pcc2rsERb

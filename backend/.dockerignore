@@ -1,0 +1,52 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+.env/
+*.env
+
+# Ignore local environment files
+*.local
+*.development
+*.test
+*.log
+
+# Ignore IDE/editor settings
+.idea/
+.vscode/
+*.swp
+
+# Ignore Docker-related files that shouldn't be copied
+Dockerfile
+docker-compose.yml
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore test files
+tests/
+*.spec
+*.coverage
+.coverage
+htmlcov/
+
+# Ignore dependency archives
+*.egg-info/
+*.whl
+*.tar.gz
+Pipfile.lock
+
+# Ignore static assets if they are built during the Docker build
+/node_modules/
+dist/
+build/
+
+# Optionally exclude large data or temporary files
+*.sqlite3
+*.bak
+*.tmp
