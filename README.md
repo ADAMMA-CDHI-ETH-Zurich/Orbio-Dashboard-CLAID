@@ -1,7 +1,4 @@
 # Orbio - A Digital Biomarker Website
-
-[[_TOC_]]
-
 ## Team Members
 1. Nikita Zubairov
 2. Helena Kaikkonen
@@ -9,7 +6,7 @@
 4. Jianing Xu
 
 ## Project Description 
-Our project, titled Orbio, is a web interface that uses the CLAID Middleware to display sensor data from smartwatches, such as heart rate or acceleration. We worked with points of contact from [ADAMMA Lab](https://adamma.ethz.ch/), a research group at ETH Zurich focused on biomarker research. Our project currently implements a "Principle Investigator (PI) View" where PIs can create research studies and view participant data and a "User View" where users can view their own data and join studies.
+Our project, titled Orbio, is a web interface that uses the CLAID Middleware to display sensor data from smartwatches, such as heart rate or acceleration. We worked with points of contact from [ADAMMA Lab](https://adamma.ethz.ch/), a research group at ETH Zurich focused on biomarker research. Our project currently implements a "Principal Investigator (PI) View" where PIs can create research studies and view participant data, and a "User View" where users can view their own data and join studies.
 
 The application is deployed on the ADAMMA servers, here http://claid-dashboard.ethz.ch.
 
